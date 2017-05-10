@@ -51,7 +51,11 @@ buildscript {
         classpath "org.jetbrains.kotlin:kotlin-android-extensions:$kotlin_version"
     }
 }
-
+dependencies {
+    def mobileCenterSdkVersion = '0.7.0'
+    compile "com.microsoft.azure.mobile:mobile-center-analytics:${mobileCenterSdkVersion}"
+    compile "com.microsoft.azure.mobile:mobile-center-crashes:${mobileCenterSdkVersion}"
+}
 def Properties props = new Properties()
 def propFile = new File('signing.properties')
 if (propFile.canRead()) {
